@@ -3,6 +3,16 @@ entries:
   ca-whatsapp-backend-chart:
   - apiVersion: v2
     appVersion: v1.0.7
+    created: "2024-07-02T22:04:19.464474804Z"
+    description: A Helm chart for Kubernetes
+    digest: 1cc7e4891e9aa5f7c33d79988cc77fdf00d46989270685ec8139d22778e453a6
+    name: ca-whatsapp-backend-chart
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/ca-whatsapp-backend-chart-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v1.0.7
     created: "2024-07-02T21:36:54.405923119Z"
     description: A Helm chart for Kubernetes
     digest: 527dac91272b63c0b72a0139cdb43d1bf4dc94d723c54c158c101eb04836c0be
@@ -32,4 +42,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/portfolio-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-02T21:36:54.404530181Z"
+generated: "2024-07-02T22:04:19.463223917Z"
