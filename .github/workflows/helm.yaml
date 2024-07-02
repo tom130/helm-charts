@@ -35,15 +35,15 @@ jobs:
         shell: bash
         working-directory: src
         run: |
-          helm repo index ./temp --merge ../dest/index.yaml --url https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/
+          helm repo index ./packages --merge ../dest/index.yaml --url https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/
           mkdir -p ../dest/helm
           echo "Copying files..."
           shopt -s extglob
           mkdir -p ./helm/
-          echo "n" | cp -pr ./temp/!(index.yaml) ../dest/helm/
-          echo "n" | cp -pr ./temp/!(index.yaml) ./helm/
-          echo "n" | cp -pr ./temp/index.yaml ../dest/
-          echo "y" | rm -rf ./temp/*
+          echo "n" | cp -pr ./packages/!(index.yaml) ../dest/helm/
+          echo "n" | cp -pr ./packages/!(index.yaml) ./helm/
+          echo "n" | cp -pr ./packages/index.yaml ../dest/
+          echo "y" | rm -rf ./packages/*
           git config user.name "helm"
           git config user.email "mail@tomaskrbec.cz"
           git add .
