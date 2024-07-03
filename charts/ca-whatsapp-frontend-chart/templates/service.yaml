@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ca-whatsapp-frontend-chart.fullname" . }}
+  labels:
+    {{- include "ca-whatsapp-frontend-chart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "ca-whatsapp-frontend-chart.selectorLabels" . | nindent 4 }}
