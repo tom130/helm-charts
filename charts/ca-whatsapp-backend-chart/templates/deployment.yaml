@@ -43,6 +43,26 @@ spec:
               secretKeyRef:
                 name: {{ .Values.twilio.secrets.name }}
                 key: token
+          - name: MARKETING_CLOUD_SUBDOMAIN
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.sfmc.secrets.name }}
+                key: subdomain
+          - name: MARKETING_CLOUD_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.sfmc.secrets.name }}
+                key: clientId
+          - name: MARKETING_CLOUD_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.sfmc.secrets.name }}
+                key: clientSecret
+          - name: MARKETING_CLOUD_ACCOUNT_ID
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.sfmc.secrets.name }}
+                key: accountId
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
