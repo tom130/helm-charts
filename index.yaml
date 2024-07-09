@@ -43,6 +43,16 @@ entries:
     version: 0.1.0
   ca-whatsapp-frontend-chart:
   - apiVersion: v2
+    appVersion: v1.3.2
+    created: "2024-07-09T12:29:03.129689472Z"
+    description: A Helm chart for Kubernetes
+    digest: 61c234af9f65e6099abf617b57af49a6546c2107ba1c8ce2acafe19c72104105
+    name: ca-whatsapp-frontend-chart
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/ca-whatsapp-frontend-chart-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
     appVersion: v1.3.1
     created: "2024-07-09T12:03:09.557263068Z"
     description: A Helm chart for Kubernetes
@@ -103,4 +113,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/tom130/helm-charts/gh-pages/helm/portfolio-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-09T12:03:09.556316959Z"
+generated: "2024-07-09T12:29:03.129132278Z"
