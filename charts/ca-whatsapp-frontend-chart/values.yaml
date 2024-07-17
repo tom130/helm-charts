@@ -13,7 +13,7 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-labels:
+customLabels:
   restart-on-backend-deploy: "true"
 serviceAccount:
   # Specifies whether a service account should be created
