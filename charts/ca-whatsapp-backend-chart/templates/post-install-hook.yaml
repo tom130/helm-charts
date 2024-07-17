@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restart-dependent-pod
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: restart-dependent-pod
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: kubectl
+        image: bitnami/kubectl:latest
+        command:
+        - /bin/sh
+        - -c
+        - |
+          LABEL_SELECTOR="{{ .Values.frontendDeploymentLabel.key }}={{ .Values.frontendDeploymentLabel.value }}"
+          DEPLOYMENTS=$(kubectl get deployments -l "$LABEL_SELECTOR" -o jsonpath='{.items[*].metadata.name}')
+          for deployment in $DEPLOYMENTS; do
+            echo "Restarting deployment: $deployment"
+            kubectl rollout restart deployment/$deployment
+          done
+      serviceAccountName: restart-job-sa

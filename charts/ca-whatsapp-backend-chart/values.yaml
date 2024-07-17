@@ -45,6 +45,9 @@ sfmc:
   secrets:
     name: ca-sfmc-auth
 
+frontendDeploymentLabel:
+  key: "restart-on-backend-deploy"
+  value: "true"
 service:
   type: ClusterIP
   port: 3000
