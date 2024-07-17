@@ -43,6 +43,11 @@ spec:
               secretKeyRef:
                 name: {{ .Values.twilio.secrets.name }}
                 key: token
+          - name: JWT_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.sfmc.secrets.name }}
+                key: jwt
           - name: MARKETING_CLOUD_SUBDOMAIN
             valueFrom:
               secretKeyRef:
