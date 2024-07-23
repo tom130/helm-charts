@@ -41,6 +41,9 @@ securityContext: {}
 twilio:
   secrets:
     name: ca-twilio-auth
+mongodb:
+  secrets:
+    name: ca-mongodb-auth
 sfmc:
   secrets:
     name: ca-sfmc-auth
